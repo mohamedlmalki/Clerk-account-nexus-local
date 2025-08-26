@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern dark theme design system inspired by AI search interfaces */
+
+@layer base {
+  :root {
+    /* Light theme colors - professional and clean */
+    --background: 0 0% 100%;
+    --foreground: 220 15% 15%;
+    
+    /* Card and surface colors */
+    --card: 0 0% 100%;
+    --card-foreground: 220 15% 15%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 15% 15%;
+    
+    /* Brand colors - emerald green accents */
+    --primary: 152 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 152 85% 35%;
+    
+    /* Secondary surface colors */
+    --secondary: 220 15% 96%;
+    --secondary-foreground: 220 15% 15%;
+    
+    /* Muted elements */
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 45%;
+    
+    /* Accent colors */
+    --accent: 152 85% 45%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Status colors */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 85% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 95% 55%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Input and border colors */
+    --border: 220 15% 88%;
+    --input: 220 15% 95%;
+    --ring: 152 85% 45%;
+    
+    /* Navigation colors */
+    --nav-background: 0 0% 98%;
+    --nav-border: 220 15% 90%;
+    
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(152 85% 45%), hsl(152 85% 35%));
+    --gradient-surface: linear-gradient(180deg, hsl(0 0% 100%), hsl(220 15% 98%));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(152 85% 45% / 0.15);
+    --shadow-card: 0 4px 20px hsl(220 15% 15% / 0.1);
+    
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Primary dark theme colors */
+    --background: 220 25% 6%;
+    --foreground: 220 15% 92%;
+    
+    /* Card and surface colors */
+    --card: 220 20% 8%;
+    --card-foreground: 220 15% 92%;
+    --popover: 220 20% 8%;
+    --popover-foreground: 220 15% 92%;
+    
+    /* Brand colors - emerald green accents */
+    --primary: 152 85% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 152 85% 65%;
+    
+    /* Secondary surface colors */
+    --secondary: 220 20% 12%;
+    --secondary-foreground: 220 15% 85%;
+    
+    /* Muted elements */
+    --muted: 220 15% 14%;
+    --muted-foreground: 220 10% 55%;
+    
+    /* Accent colors */
+    --accent: 152 85% 45%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Status colors */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 152 85% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 95% 55%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Input and border colors */
+    --border: 220 15% 18%;
+    --input: 220 20% 12%;
+    --ring: 152 85% 45%;
+    
+    /* Navigation colors */
+    --nav-background: 220 25% 4%;
+    --nav-border: 220 15% 16%;
+    
+    /* Custom gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(152 85% 45%), hsl(152 85% 35%));
+    --gradient-surface: linear-gradient(180deg, hsl(220 20% 8%), hsl(220 25% 6%));
+    
+    /* Shadows with green glow */
+    --shadow-glow: 0 0 40px hsl(152 85% 45% / 0.15);
+    --shadow-card: 0 4px 20px hsl(220 25% 4% / 0.4);
+  }
+  
+  /* Grid pattern for backgrounds - adapts to theme */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+  
+  .dark .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  }
+  
+  /* Animations */
+  .pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes pulse-glow {
+    from {
+      box-shadow: 0 0 20px hsl(152 85% 45% / 0.2);
+    }
+    to {
+      box-shadow: 0 0 40px hsl(152 85% 45% / 0.4);
+    }
+  }
+  
+  /* Smooth theme transitions */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+  }
+}

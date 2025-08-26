@@ -1,0 +1,5 @@
+# Ignore the accounts file with secrets
+accounts.json
+
+# Ignore node modules
+node_modules
